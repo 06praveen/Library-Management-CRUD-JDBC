@@ -6,6 +6,10 @@ USE librarymanagement;
 
 //Admin and User Table
 CREATE TABLE login(userName varchar(15) PRIMARY KEY,password varchar(20) NOT NULL);
+//Insert Values
+INSERT INTO login VALUES
+("Admin","2006");
+("User","0715");
 
 //Books Table
 CREATE TABLE Books
