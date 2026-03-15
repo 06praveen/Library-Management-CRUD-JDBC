@@ -75,28 +75,25 @@ Library-Management-CRUD-JDBC
 Run the following SQL script in MySQL to create the database and tables.
 
 ```sql
-CREATE DATABASE librarymanagement;
-
+//Create Database
+CREATE DATABSE librarymanagement;
 USE librarymanagement;
 
-CREATE TABLE login(
-id INT AUTO_INCREMENT PRIMARY KEY,
-username VARCHAR(50) UNIQUE,
-password VARCHAR(50),
-role VARCHAR(20)
-);
+//Create Tables
 
-INSERT INTO login(username,password,role)
-VALUES
-('admin','123','Admin'),
-('raj','123','User');
+//Admin and User Table
+CREATE TABLE login(userName varchar(15) PRIMARY KEY,password varchar(20) NOT NULL);
+//Insert Values
+INSERT INTO login VALUES
+("Admin","2006");
+("User","0715");
 
-CREATE TABLE books(
-id INT PRIMARY KEY,
-title VARCHAR(100),
-author VARCHAR(100),
-quantity INT
-);
+//Books Table
+CREATE TABLE Books
+(BookID int PRIMARY KEY,
+Title varchar(15) UNIQUE,
+Author varchar(15) NOT NULL,
+Quantity int NOT NULL);
 ```
 
 ---
@@ -143,10 +140,10 @@ Main.java
 
 ## 🔑 Default Login Credentials
 
-| Role  | Username | Password |
-| ----- | -------- | -------- |
-| Admin | admin    | 123      |
-| User  | raj      | 123      |
+| Username  | Password  |
+| --------- | --------- |
+| admin     | 2006      |
+| user      | 0715      |
 
 ---
 
